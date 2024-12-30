@@ -42,23 +42,25 @@ class CustomRadioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 40),
+        padding: EdgeInsets.only(bottom: screenHeight * 0.038),
         child: SizedBox(
-          width: 102,
-          height: 85,
+          width: screenWidth * 0.053125,
+          height: screenHeight * 0.0804165,
           child: DecoratedBox(
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Color(0xFFB4CFFF),
-                  offset: Offset(-14, 17),
+                  offset: Offset(screenWidth * -0.0073, screenHeight * 0.0161),
                 ),
               ],
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(screenWidth * 0.00522),
             ),
             child: isSelected
                 ? Image(
@@ -71,25 +73,3 @@ class CustomRadioButton extends StatelessWidget {
     );
   }
 }
-
-// SizedBox(
-//         width: 102,
-//         height: 85,
-//         child: DecoratedBox(
-//           decoration: BoxDecoration(
-//             boxShadow: [
-//               BoxShadow(
-//                 color: Color(0xFFB4CFFF),
-//                 offset: Offset(-14, 17),
-//               ),
-//             ],
-//             color: Colors.white,
-//             borderRadius: BorderRadius.circular(10),
-//           ),
-//           child: isSelected
-//               ? Image(
-//                   image: AssetImage('assets/images/icon_check.png'),
-//                 )
-//               : SizedBox(),
-//         ),
-//       ),

@@ -7,6 +7,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Stack(
       children: <Widget>[
         Positioned.fill(
@@ -22,42 +24,43 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[
               DecoratedBox(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.0105),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withAlpha(90),
-                        offset: Offset(0, 10),
-                        blurRadius: 8.8,
+                        offset: Offset(0, screenHeight * 0.0095),
+                        blurRadius: screenWidth * 0.0046,
                       ),
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.0105),
                     child: Image(
                       image: AssetImage('assets/icon/logo.png'),
-                      width: 267,
-                      height: 267,
+                      width: screenWidth * 0.1391,
+                      height: screenHeight * 0.253,
                     ),
                   )),
               Text(
                 'MATHMANIA',
                 style: TextStyle(
-                  fontSize: 150,
+                  fontSize: screenWidth * 0.0782,
                   color: Colors.white,
                   fontFamily: 'Roboto_Mono',
                   decoration: TextDecoration.none,
                 ),
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: screenHeight * 0.0474,
               ),
               DecoratedBox(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(screenWidth * 0.016),
                   boxShadow: [
                     BoxShadow(
                       color: Color(0xFFB4CFFF),
-                      offset: Offset(-14, 17),
+                      offset:
+                          Offset(screenWidth * -0.0073, screenHeight * 0.0161),
                     )
                   ],
                 ),
@@ -67,28 +70,31 @@ class HomeScreen extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    fixedSize: Size(1002.76, 141.42),
+                        borderRadius:
+                            BorderRadius.circular(screenWidth * 0.016)),
+                    fixedSize:
+                        Size(screenWidth * 0.52227, screenHeight * 0.134),
                   ),
                   child: Text(
                     'Main',
                     style: TextStyle(
-                        fontSize: 60,
+                        fontSize: screenWidth * 0.0313,
                         fontFamily: 'Inter',
                         color: Color(0xFF679FFF)),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 40,
+              SizedBox(
+                height: screenHeight * 0.038,
               ),
               DecoratedBox(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(screenWidth * 0.016),
                   boxShadow: [
                     BoxShadow(
                       color: Color(0xFFB4CFFF),
-                      offset: Offset(-14, 17),
+                      offset:
+                          Offset(screenWidth * -0.0073, screenHeight * 0.0161),
                     )
                   ],
                 ),
@@ -98,13 +104,15 @@ class HomeScreen extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    fixedSize: Size(1002.76, 141.42),
+                        borderRadius:
+                            BorderRadius.circular(screenWidth * 0.016)),
+                    fixedSize:
+                        Size(screenWidth * 0.52227, screenHeight * 0.134),
                   ),
                   child: Text(
                     'Keluar',
                     style: TextStyle(
-                        fontSize: 60,
+                        fontSize: screenWidth * 0.0313,
                         fontFamily: 'Inter',
                         color: Color(0xFF679FFF)),
                   ),

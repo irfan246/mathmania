@@ -5,12 +5,14 @@ class AlertDialogGame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Dialog(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(37),
         child: SizedBox(
-          width: 1000,
-          height: 1000,
+          width: screenWidth * 0.522,
+          height: screenHeight * 0.98,
           child: Material(
             color: Colors.white,
             child: Center(
@@ -18,14 +20,14 @@ class AlertDialogGame extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 828,
-                    height: 232,
+                    width: screenWidth * 0.43125,
+                    height: screenHeight * 0.22,
                     child: Wrap(
                       children: [
                         Text(
                           'Apa anda ingin keluar ruangan?',
                           style: TextStyle(
-                              fontSize: 96,
+                              fontSize: screenWidth * 0.05,
                               fontFamily: 'Inter',
                               color: Color(0xFF679FFF)),
                           textAlign: TextAlign.center,
@@ -34,7 +36,7 @@ class AlertDialogGame extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 300,
+                    height: screenHeight * 0.285,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -44,46 +46,52 @@ class AlertDialogGame extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Color(0xFFB4CFFF),
-                              offset: Offset(-14, 17),
+                              offset: Offset(
+                                  screenWidth * -0.0073, screenHeight * 0.0161),
                             ),
                           ],
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.015625),
                         ),
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(324, 124),
+                            fixedSize: Size(
+                                screenWidth * 0.16875, screenHeight * 0.13),
                             backgroundColor: Color(0xFF679FFF),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth * 0.015625),
                             ),
                           ),
                           child: Text(
                             'Tidak',
                             style: TextStyle(
                               fontFamily: 'Inter',
-                              fontSize: 60,
+                              fontSize: screenWidth * 0.03125,
                               color: Colors.white,
                             ),
                           ),
                         ),
                       ),
                       SizedBox(
-                        width: 120,
+                        width: screenWidth * 0.0625,
                       ),
                       DecoratedBox(
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
                               color: Color(0xFFB4CFFF),
-                              offset: Offset(-14, 17),
+                              offset: Offset(
+                                  screenWidth * -0.0073, screenHeight * 0.0161),
                             ),
                           ],
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.015625),
                         ),
                         child: ElevatedButton(
                           onPressed: () {
@@ -91,17 +99,19 @@ class AlertDialogGame extends StatelessWidget {
                             Navigator.pop(context);
                           },
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(324, 124),
+                            fixedSize: Size(
+                                screenWidth * 0.16875, screenHeight * 0.13),
                             backgroundColor: Color(0xFFF1F3FF),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth * 0.015625),
                             ),
                           ),
                           child: Text(
                             'Iya',
                             style: TextStyle(
                               fontFamily: 'Inter',
-                              fontSize: 60,
+                              fontSize: screenWidth * 0.03125,
                               color: Color(0xFF679FFF),
                             ),
                           ),

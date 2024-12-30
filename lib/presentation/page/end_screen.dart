@@ -5,17 +5,23 @@ class EndScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xFF679FFF),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/bintang.png'),
+            Image.asset(
+              'assets/images/bintang.png',
+              width: screenWidth * 0.223,
+              height: screenHeight * 0.29,
+            ),
             Text(
               'Menang!!',
               style: TextStyle(
-                fontSize: 128,
+                fontSize: screenWidth * 0.069,
                 fontFamily: 'Inter',
                 color: Colors.white,
               ),
@@ -23,13 +29,22 @@ class EndScreen extends StatelessWidget {
             Text(
               '150',
               style: TextStyle(
-                fontSize: 100,
+                fontSize: screenWidth * 0.0522,
                 fontFamily: 'Inter',
                 color: Colors.white,
               ),
             ),
+            // Text(
+            //   'menunggu tuan rumah....',
+            //   style: TextStyle(
+            //     fontSize: screenWidth * 0.025,
+            //     fontFamily: 'Inter',
+            //     color: Colors.white,
+            //     fontWeight: FontWeight.w200,
+            //   ),
+            // ),
             SizedBox(
-              height: 80,
+              height: screenHeight * 0.0758,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -39,49 +54,55 @@ class EndScreen extends StatelessWidget {
                     Navigator.pushNamed(context, '/');
                   },
                   style: TextButton.styleFrom(
-                    fixedSize: Size(438, 124),
+                    fixedSize:
+                        Size(screenWidth * 0.228125, screenHeight * 0.13),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.white, width: 6),
+                      borderRadius:
+                          BorderRadius.circular(screenWidth * 0.015625),
+                      side: BorderSide(
+                          color: Colors.white, width: screenWidth * 0.003125),
                     ),
                   ),
                   child: Text(
                     'Bubarkan',
                     style: TextStyle(
-                      fontSize: 60,
+                      fontSize: screenWidth * 0.03125,
                       fontFamily: 'Inter',
                       color: Colors.white,
                     ),
                   ),
                 ),
                 SizedBox(
-                  width: 80,
+                  width: screenWidth * 0.042,
                 ),
                 DecoratedBox(
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
                         color: Color(0xFFB4CFFF),
-                        offset: Offset(-14, 17),
+                        offset: Offset(
+                            screenWidth * -0.0073, screenHeight * 0.0161),
                       ),
                     ],
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.015625),
                   ),
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/');
                     },
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(452, 124),
+                      fixedSize:
+                          Size(screenWidth * 0.23542, screenHeight * 0.13),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius:
+                            BorderRadius.circular(screenWidth * 0.015625),
                       ),
                     ),
                     child: Text(
                       'Main Lagi',
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: screenWidth * 0.03125,
                         fontFamily: 'Inter',
                         color: Color(0xFF679FFF),
                       ),

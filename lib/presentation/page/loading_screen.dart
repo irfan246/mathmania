@@ -5,6 +5,7 @@ class LoadingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/game');
     });
@@ -14,7 +15,7 @@ class LoadingScreen extends StatelessWidget {
         child: Text(
           'Mulai!!',
           style: TextStyle(
-            fontSize: 128,
+            fontSize: screenWidth * 0.068,
             fontFamily: 'Inter',
             color: Colors.white,
           ),

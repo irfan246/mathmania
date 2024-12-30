@@ -5,26 +5,28 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        toolbarHeight: 182,
+        toolbarHeight: screenHeight * 0.1722,
         automaticallyImplyLeading: false,
         flexibleSpace: Stack(
           children: [
             Positioned(
-              left: 155,
-              top: 50,
+              left: screenWidth * 0.081,
+              top: screenHeight * 0.04732,
               child: IconButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
                 icon: Image.asset(
                   'assets/images/icon_back.png',
-                  width: 49,
-                  height: 66,
+                  width: screenWidth * 0.0256,
+                  height: screenHeight * 0.06245,
                 ),
               ),
             ),
@@ -45,82 +47,101 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 1315,
+                  width: screenWidth * 0.685,
                   child: TextField(
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 45),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: screenHeight * 0.04258),
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 6),
-                          borderRadius: BorderRadius.circular(20)),
+                          borderSide: BorderSide(
+                              color: Colors.white,
+                              width: screenWidth * 0.003125),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.0105)),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 6),
-                          borderRadius: BorderRadius.circular(20)),
+                          borderSide: BorderSide(
+                              color: Colors.white,
+                              width: screenWidth * 0.003125),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.0105)),
                       hintText: 'Username...',
                       hintStyle: TextStyle(
                         fontFamily: 'Inter',
-                        fontSize: 70,
+                        fontSize: screenWidth * 0.0396,
                         color: Colors.white,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: screenHeight * 0.038,
                 ),
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 706,
+                        width: screenWidth * 0.36771,
                         child: TextField(
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 45),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: screenHeight * 0.04258),
                             enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 6),
-                                borderRadius: BorderRadius.circular(20)),
+                                borderSide: BorderSide(
+                                    color: Colors.white,
+                                    width: screenWidth * 0.003125),
+                                borderRadius: BorderRadius.circular(
+                                    screenWidth * 0.0105)),
                             focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 6),
-                                borderRadius: BorderRadius.circular(20)),
+                                borderSide: BorderSide(
+                                    color: Colors.white,
+                                    width: screenWidth * 0.003125),
+                                borderRadius: BorderRadius.circular(
+                                    screenWidth * 0.0105)),
                             hintText: 'Kode...',
                             hintStyle: TextStyle(
                               fontFamily: 'Inter',
-                              fontSize: 70,
+                              fontSize: screenWidth * 0.03646,
                               color: Colors.white,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        width: 70,
+                      SizedBox(
+                        width: screenWidth * 0.03646,
                       ),
                       DecoratedBox(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.016),
                           boxShadow: [
                             BoxShadow(
                               color: Color(0xFFB4CFFF),
-                              offset: Offset(-14, 17),
+                              offset: Offset(
+                                  screenWidth * -0.0073, screenHeight * 0.0161),
                             )
                           ],
                         ),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            print('Width: ${screenWidth}');
+                            print('Height: ${screenHeight}');
+                          },
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(537, 193),
+                            fixedSize: Size(
+                                screenWidth * 0.26797, screenHeight * 0.1826),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth * 0.016),
                             ),
                           ),
                           child: Text(
                             'Join',
                             style: TextStyle(
                                 fontFamily: 'Inter',
-                                fontSize: 70,
+                                fontSize: screenWidth * 0.03646,
                                 color: Color(0XFF679FFF)),
                           ),
                         ),
@@ -128,16 +149,17 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: screenHeight * 0.038,
                 ),
                 DecoratedBox(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.016),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0xFFB4CFFF),
-                        offset: Offset(-14, 17),
+                        offset: Offset(
+                            screenWidth * -0.0073, screenHeight * 0.0161),
                       )
                     ],
                   ),
@@ -146,16 +168,18 @@ class MainScreen extends StatelessWidget {
                       Navigator.pushNamed(context, '/makeRoom');
                     },
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(1315, 192.94),
+                      fixedSize:
+                          Size(screenWidth * 0.685, screenHeight * 0.18254),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius:
+                            BorderRadius.circular(screenWidth * 0.016),
                       ),
                     ),
                     child: Text(
                       'Buat Ruangan',
                       style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 70,
+                          fontSize: screenWidth * 0.03646,
                           color: Color(0XFF679FFF)),
                     ),
                   ),

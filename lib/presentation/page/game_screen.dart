@@ -5,6 +5,8 @@ class GameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/end');
     });
@@ -13,29 +15,37 @@ class GameScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 60,
-            child: Image.asset('assets/images/entity.png'),
+            top: screenHeight * 0.059,
+            child: Image.asset(
+              'assets/images/entity.png',
+              width: screenWidth,
+              height: screenHeight * 0.054,
+            ),
           ),
           Positioned(
-            top: 60,
-            child: Image.asset('assets/images/icon_red.png'),
+            top: screenHeight * 0.059,
+            child: Image.asset(
+              'assets/images/icon_red.png',
+              width: screenWidth * 0.0849,
+              height: screenHeight * 0.157,
+            ),
           ),
           Positioned(
-            top: 120,
-            left: 150,
+            top: screenHeight * 0.11353,
+            left: screenWidth * 0.078125,
             child: Row(
               children: [
                 Row(
                   children: [
                     Image.asset(
                       'assets/images/bintang.png',
-                      width: 170,
-                      height: 161,
+                      width: screenWidth * 0.08546,
+                      height: screenHeight * 0.152319,
                     ),
                     Text(
                       '50',
                       style: TextStyle(
-                        fontSize: 70,
+                        fontSize: screenWidth * 0.03647,
                         fontFamily: 'Inter',
                         color: Colors.white,
                       ),
@@ -43,19 +53,19 @@ class GameScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  width: 1000,
+                  width: screenWidth * 0.522,
                 ),
                 Row(
                   children: [
                     Image.asset(
                       'assets/images/bulan.png',
-                      width: 158,
-                      height: 106,
+                      width: screenWidth * 0.0823,
+                      height: screenHeight * 0.1004,
                     ),
                     Text(
                       '40',
                       style: TextStyle(
-                        fontSize: 70,
+                        fontSize: screenWidth * 0.03647,
                         fontFamily: 'Inter',
                         color: Colors.white,
                       ),
@@ -72,22 +82,29 @@ class GameScreen extends StatelessWidget {
                 Text(
                   '4 x 12 =',
                   style: TextStyle(
-                    fontSize: 128,
+                    fontSize: screenWidth * 0.069,
                     fontFamily: 'Inter',
                     color: Colors.white,
                   ),
                 ),
                 SizedBox(
-                  width: 861,
+                  width: screenWidth * 0.4484375,
                   child: TextField(
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 70),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: screenHeight * 0.06627),
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 6),
-                          borderRadius: BorderRadius.circular(30)),
+                          borderSide: BorderSide(
+                              color: Colors.white,
+                              width: screenWidth * 0.003125),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.015625)),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 6),
-                          borderRadius: BorderRadius.circular(30)),
+                          borderSide: BorderSide(
+                              color: Colors.white,
+                              width: screenWidth * 0.003125),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth * 0.015625)),
                     ),
                   ),
                 ),
